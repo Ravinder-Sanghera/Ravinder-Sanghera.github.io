@@ -24,16 +24,16 @@ async function Search(){
     line.textContent = `VehicleID: ${data.VehicleID},  Make: ${data.Make},  Model: ${data.Model},
                         Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
 
-    const {data2, error2} = await supabase
+    const {data: data2, error: error2} = await supabase
         .from("People")
         .select("Name", "LicenseNumber")
         .eq("PersonID", data.OwnerID);
 
-        if (error){
+        if (error2){
             console.log("error");
             return;
         }
-        if (!data){
+        if (!data2){
             return;
         }
 
