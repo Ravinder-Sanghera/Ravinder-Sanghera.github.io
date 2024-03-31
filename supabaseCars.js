@@ -21,16 +21,24 @@ async function Search(){
     output.innerHTML = "";
 
     const line = document.createElement("li");
-    line.textContent = `VehicleID: ${data[0].VehicleID},  Make: ${data[0].Make},  Model: ${data[0].Model},
-                        Colour: ${data[0].Colour}, Expiry Date: ${data[0].ExpiryDate}`;
+    line.textContent = `VehicleID: ${data.VehicleID},  Make: ${data.Make},  Model: ${data.Model},
+                        Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
 
     const {data2, error2} = await supabase
         .from("People")
         .select("Name", "LicenseNumber")
         .eq("PersonID", data.OwnerID);
 
+        if (error){
+            console.log("error");
+            return;
+        }
+        if (!data){
+            return;
+        }
+
     const line2 = document.createElement("li");
-    line2.textContent = `Owner Name: ${data2[0].Name}, Owner's License ID: ${data2[0].LicenseNumber}`;
+    line2.textContent = `Owner Name: ${data2.Name}, Owner's License ID: ${data2.LicenseNumber}`;
     
     output.appendChild(line);
     output.appendChild(document.createElement("br"));
