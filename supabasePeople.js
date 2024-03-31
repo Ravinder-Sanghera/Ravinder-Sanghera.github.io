@@ -8,10 +8,9 @@ async function Search(){
     .from("People")
     .select("Name", "Address", "DOB", "LicenceNumber", "ExpiryDate")
     .or(
-        supabase
-        .ilike("Name", `%${searchQuery}%`)
-        .eq("LicenceNumber", searchQuery)
-    )
+        supabase.ilike("Name", `%${searchQuery}%`),
+        supabase.eq("LicenceNumber", searchQuery)
+    );
 
     console.log(data);
     
