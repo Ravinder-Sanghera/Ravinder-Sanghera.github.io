@@ -6,8 +6,8 @@ async function Search(){
 
     const { data, error } = await supabase
         .from("People")
-        .select("Name", "Address", "DOB", "LicenceNumber", "ExpiryDate")
-        .or(`Name.ilike.%${searchQuery}%,LicenceNumber.eq.${searchQuery}`)
+        .select("*")
+        .or(`Name.ilike.%${searchQuery}%,LicenceNumber.eq.${searchQuery}`);
 
         
         
