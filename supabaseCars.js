@@ -27,7 +27,7 @@ async function Search(){
     const {data2, error2} = await supabase
         .from("People")
         .select("Name", "LicenseNumber")
-        .eq(PersonID, data.OwnerID);
+        .eq("PersonID", data.OwnerID);
 
     const line2 = document.createElement("li");
     line2.textContent = `Owner Name: ${data2[0].Name}, Owner's License ID: ${data2[0].LicenseNumber}`;
