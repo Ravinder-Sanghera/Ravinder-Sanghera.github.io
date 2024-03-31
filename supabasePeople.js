@@ -7,17 +7,17 @@ async function Search(){
     const { data, error } = await supabase
     .from("People")
     .select("Name", "Address", "DOB", "LicenceNumber", "ExpiryDate")
-    .or(
-        //supabase.ilike("Name", "*${searchQuery}*"),
-        supabase.eq("LicenceNumber", searchQuery)
-    );
-
-    console.log(data);
+    .eq("LicenceNumber", searchQuery)
     
-}
-
-document.getElementById("searchButton").addEventListener("click", Search);
-
-
-
+        
+        
+    console.log(data);
+        
+    }
+    
+    document.getElementById("searchButton").addEventListener("click", Search);
+    
+    
+    
+// supabase.ilike("Name", "*${searchQuery}*")
 
