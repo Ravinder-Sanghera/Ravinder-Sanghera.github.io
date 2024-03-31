@@ -7,7 +7,7 @@ async function Search(){
     const {data, error} = await supabase
         .from("Vehicles")
         .select("*")
-        .eq(VehicleID, searchQuery);
+        .eq("VehicleID", searchQuery);
 
     if (error){
         console.log("error");
