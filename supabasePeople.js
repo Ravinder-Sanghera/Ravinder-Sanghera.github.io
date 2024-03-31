@@ -4,12 +4,15 @@ const supabase = createClient('https://czibkypjyfbtsxpigztg.supabase.co', 'eyJhb
 async function Search(){
     const searchQuery = document.getElementById("searchInput").value;
 
-    // const { data, error } = await supabase
-    // .from("People")
-    // .select("Name")
-    // .eq("LicenceNumber", searchQuery)
+    const { data, error } = await supabase
+        .from("People")
+        .select("Name", "Address", "DOB", "LicenceNumber", "ExpiryDate")
+        .or(
+            supabase
+            .ilike("Name", `%${searchQuery}%`)
+            .eq("LicenceNumber", searchQuery)
+        );
 
-    const {data, error} = await supabase.from('People').select();
     
         
         
