@@ -21,8 +21,8 @@ async function Search(){
     output.innerHTML = "";
 
     const line = document.createElement("li");
-    line.textContent = `VehicleID: ${Row.VehicleID},  Make: ${Row.Make},  Model: ${Row.Model},
-                        Colour: ${Row.Colour}, Expiry Date: ${Row.ExpiryDate}`;
+    line.textContent = `VehicleID: ${data[0].VehicleID},  Make: ${data[0].Make},  Model: ${data[0].Model},
+                        Colour: ${data[0].Colour}, Expiry Date: ${data[0].ExpiryDate}`;
 
     const {data2, error2} = await supabase
         .from("People")
@@ -30,7 +30,7 @@ async function Search(){
         .eq(PersonID, data.OwnerID);
 
     const line2 = document.createElement("li");
-    line2.textContent = `Owner Name: ${data2.Name}, Owner's License ID: ${data2.LicenseNumber}`;
+    line2.textContent = `Owner Name: ${data2[0].Name}, Owner's License ID: ${data2[0].LicenseNumber}`;
     
     output.appendChild(line);
     output.appendChild(document.createElement("br"));
