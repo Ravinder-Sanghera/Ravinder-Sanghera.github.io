@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Ravinder Sanghera" />
     <meta name="description" content="Coursework 2 website - search reports" />
+    <script src="supabaseSReports.js" type="module"></script>
 </head>
 
 <body>
@@ -12,14 +13,18 @@
     </header>
 
     <main>
-        <p>Search ...:</p>
+        <p>Search Registration Plate Number:</p>
         
-        <form action="..." >
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit">
+        <form>
+            <input type="text" placeholder="Search.." name="search", id = "searchInput">
+            <button type="button" id="searchButton">
                 <img src="images/search-icon.png" alt="Search Icon" style="height: 12px;">
             </button>
         </form>
+
+        <h2>Result:</h2>
+        <ul id="output"></ul>
+
     </main>
 </body>
 

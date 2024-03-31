@@ -4,7 +4,7 @@ const supabase = createClient("https://czibkypjyfbtsxpigztg.supabase.co", "eyJhb
 async function Search(){
     const searchQuery = document.getElementById("searchInput").value;
 
-    const { data, error } = await supabase
+    const {data, error} = await supabase
         .from("People")
         .select("*")
         .or(`Name.ilike.%${searchQuery}%`, `LicenseNumber.eq.${searchQuery}`);
@@ -12,21 +12,22 @@ async function Search(){
     if (error){
         console.log("error");
         return;
-    }   
+    }
 
     const output = document.getElementById("output");
+    output.innerHTML = "";
+
     for (const Row of data){
         const line = document.createElement("li");
         line.textContent = `Name: ${Row.Name},  Address: ${Row.Address},  DOB: ${Row.DOB},
                             LicenseNumber: ${Row.LicenseNumber}, Expiry Date: ${Row.ExpiryDate}`;
         output.appendChild(line);
         output.appendChild(document.createElement("br"));
-
-    }
-        
     }
     
-    document.getElementById("searchButton").addEventListener("click", Search);
+}
+    
+document.getElementById("searchButton").addEventListener("click", Search);
     
     
 
