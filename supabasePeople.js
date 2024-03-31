@@ -13,7 +13,15 @@ async function Search(){
         console.log("error");
         return;
     }   
-    console.log(data[0]);
+
+    const output = document.getElementById("output");
+    for (const Row of data){
+        const line = document.createElement("li");
+        line.textContent = `Name: ${Row.Name},  Address: ${Address},  DOB: ${DOB},
+                            LicenseNumber: ${LicenseNumber}, Expiry Date: ${ExpiryDate}`;
+        outputElement.appendChild(line); 
+
+    }
         
     }
     
