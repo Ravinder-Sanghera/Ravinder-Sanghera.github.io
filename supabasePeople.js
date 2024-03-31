@@ -4,10 +4,12 @@ const supabase = createClient('https://czibkypjyfbtsxpigztg.supabase.co', 'eyJhb
 async function Search(){
     const searchQuery = document.getElementById("searchInput").value;
 
+    const orQuery = `Name.ilike.%${searchQuery}%,LicenceNumber.eq.${searchQuery}`;
+
     const { data, error } = await supabase
         .from("People")
         .select("*")
-        .or(`Name.ilike.%${searchQuery}%,LicenceNumber.eq.${searchQuery}`);
+        .or(orQuery);
 
         
         
