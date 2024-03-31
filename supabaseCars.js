@@ -32,15 +32,17 @@ async function Search(){
 
     const {data: data2, error: error2} = await supabase
         .from("People")
-        .select("Name")
-        .select ("LicenseNumber")
+        .select("*")
         .eq("PersonID", car.OwnerID);
 
         if (error2){
             console.log("error", error2);
             return;
         }
-        if (!data2 || data.length === 0){
+        if (!data2 || data2.length === 0){
+            const notFound = document.createElement("li");
+            notFound.textContent = "Owner Unknown.";
+            output.appendChild(notFound);
             return;
         }
 
