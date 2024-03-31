@@ -19,7 +19,7 @@ async function Search(){
         const line = document.createElement("li");
         line.textContent = `Name: ${Row.Name},  Address: ${Row.Address},  DOB: ${Row.DOB},
                             LicenseNumber: ${Row.LicenseNumber}, Expiry Date: ${Row.ExpiryDate}`;
-        outputElement.appendChild(line); 
+        output.appendChild(line); 
 
     }
         
