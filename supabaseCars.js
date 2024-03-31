@@ -13,35 +13,41 @@ async function Search(){
         console.log("error");
         return;
     }
-    if (data){
-        const output = document.getElementById("output");
-        output.innerHTML = "";
-        
-        const line = document.createElement("li");
-        line.textContent = `VehicleID: ${data.VehicleID},  Make: ${data.Make},  Model: ${data.Model},
-        Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
-        output.appendChild(line);
-    
-        const {data: data2, error: error2} = await supabase
-            .from("People")
-            .select("Name", "LicenseNumber")
-            .eq("PersonID", data.OwnerID);
-    
-            if (error2){
-                console.log("error", error2);
-                return;
-            }
-            if (!data2){
-                return;
-            }
-    
-        const line2 = document.createElement("li");
-        line2.textContent = `Owner Name: ${data2.Name}, Owner's License ID: ${data2.LicenseNumber}`;
-        
-        output.appendChild(document.createElement("br"));
-        output.appendChild(line2);
-    }
+    const output = document.getElementById("output");
+    output.innerHTML = "";
 
+    if (!data || data.length === 0){
+        const notFound = document.createElement("li");
+        notFound.textContent = "Vehicle not found.";
+        output.appendChild(notFound);
+        return;
+    }
+    
+    const car = data[0];
+    
+    const line = document.createElement("li");
+    line.textContent = `VehicleID: ${car.VehicleID},  Make: ${car.Make},  Model: ${car.Model},
+    Colour: ${car.Colour}, Expiry Date: ${car.ExpiryDate}`;
+    output.appendChild(line);
+
+    const {data: data2, error: error2} = await supabase
+        .from("People")
+        .select("Name", "LicenseNumber")
+        .eq("PersonID", data.OwnerID);
+
+        if (error2){
+            console.log("error", error2);
+            return;
+        }
+        if (!data2){
+            return;
+        }
+
+    const line2 = document.createElement("li");
+    line2.textContent = `Owner Name: ${data2[0].Name}, Owner's License ID: ${data2[0].LicenseNumber}`;
+    
+    output.appendChild(document.createElement("br"));
+    output.appendChild(line2);
         
 }
     
