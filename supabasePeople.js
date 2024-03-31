@@ -7,11 +7,13 @@ async function Search(){
     const { data, error } = await supabase
         .from("People")
         .select("*")
-        .or(`Name.ilike.%${searchQuery}%`, `LicenceNumber.eq.${searchQuery}`);
+        .or(`Name.ilike.%${searchQuery}%`, `LicenseNumber.eq.${searchQuery}`);
 
-        
-        
-    console.log(data);
+    if (error){
+        console.log("error");
+        return;
+    }   
+    console.log(data[0]);
         
     }
     
