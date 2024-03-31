@@ -27,7 +27,7 @@ async function Search(){
     
     const line = document.createElement("li");
     line.textContent = `VehicleID: ${car.VehicleID},  Make: ${car.Make},  Model: ${car.Model},
-    Colour: ${car.Colour}, Expiry Date: ${car.ExpiryDate}`;
+    Colour: ${car.Colour}`;
     output.appendChild(line);
 
     const {data: data2, error: error2} = await supabase
@@ -39,7 +39,7 @@ async function Search(){
             console.log("error", error2);
             return;
         }
-        if (!data2){
+        if (!data2 || data.length === 0){
             return;
         }
 
