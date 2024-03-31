@@ -13,36 +13,35 @@ async function Search(){
         console.log("error");
         return;
     }
-    if (!data){
-        return;
+    if (data){
+        output.innerHTML = "";
+        const output = document.getElementById("output");
+        output.appendChild(line);
+    
+        const line = document.createElement("li");
+        line.textContent = `VehicleID: ${data.VehicleID},  Make: ${data.Make},  Model: ${data.Model},
+                            Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
+    
+        const {data: data2, error: error2} = await supabase
+            .from("People")
+            .select("Name", "LicenseNumber")
+            .eq("PersonID", data.OwnerID);
+    
+            if (error2){
+                console.log("error", error2);
+                return;
+            }
+            if (!data2){
+                return;
+            }
+    
+        const line2 = document.createElement("li");
+        line2.textContent = `Owner Name: ${data2.Name}, Owner's License ID: ${data2.LicenseNumber}`;
+        
+        output.appendChild(document.createElement("br"));
+        output.appendChild(line2);
     }
 
-    const output = document.getElementById("output");
-    output.innerHTML = "";
-
-    const line = document.createElement("li");
-    line.textContent = `VehicleID: ${data.VehicleID},  Make: ${data.Make},  Model: ${data.Model},
-                        Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
-
-    const {data: data2, error: error2} = await supabase
-        .from("People")
-        .select("Name", "LicenseNumber")
-        .eq("PersonID", data.OwnerID);
-
-        if (error2){
-            console.log("error", error2);
-            return;
-        }
-        if (!data2){
-            return;
-        }
-
-    const line2 = document.createElement("li");
-    line2.textContent = `Owner Name: ${data2.Name}, Owner's License ID: ${data2.LicenseNumber}`;
-    
-    output.appendChild(line);
-    output.appendChild(document.createElement("br"));
-    output.appendChild(line2);
         
 }
     
