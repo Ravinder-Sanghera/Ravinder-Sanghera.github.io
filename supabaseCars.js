@@ -30,7 +30,7 @@ async function Search(){
         .eq("PersonID", data.OwnerID);
 
         if (error2){
-            console.log("error");
+            console.log("error", error2);
             return;
         }
         if (!data2){
