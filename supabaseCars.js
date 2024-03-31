@@ -14,13 +14,13 @@ async function Search(){
         return;
     }
     if (data){
-        output.innerHTML = "";
         const output = document.getElementById("output");
-        output.appendChild(line);
-    
+        output.innerHTML = "";
+        
         const line = document.createElement("li");
         line.textContent = `VehicleID: ${data.VehicleID},  Make: ${data.Make},  Model: ${data.Model},
-                            Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
+        Colour: ${data.Colour}, Expiry Date: ${data.ExpiryDate}`;
+        output.appendChild(line);
     
         const {data: data2, error: error2} = await supabase
             .from("People")
