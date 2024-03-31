@@ -8,7 +8,7 @@ async function Search(){
     .from("People")
     .select("Name", "Address", "DOB", "LicenceNumber", "ExpiryDate")
     .or(
-        supabase.ilike("Name", `%${searchQuery}%`),
+        supabase.ilike("Name", "*${searchQuery}*"),
         supabase.eq("LicenceNumber", searchQuery)
     );
 
