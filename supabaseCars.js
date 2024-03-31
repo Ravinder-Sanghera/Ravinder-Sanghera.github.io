@@ -32,7 +32,8 @@ async function Search(){
 
     const {data: data2, error: error2} = await supabase
         .from("People")
-        .select("Name", "LicenseNumber")
+        .select("Name")
+        .select ("LicenseNumber")
         .eq("PersonID", car.OwnerID);
 
         if (error2){
