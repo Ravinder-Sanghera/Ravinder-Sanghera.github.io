@@ -17,8 +17,8 @@ async function Search(){
     const output = document.getElementById("output");
     for (const Row of data){
         const line = document.createElement("li");
-        line.textContent = `Name: ${Row.Name},  Address: ${Address},  DOB: ${DOB},
-                            LicenseNumber: ${LicenseNumber}, Expiry Date: ${ExpiryDate}`;
+        line.textContent = `Name: ${Row.Name},  Address: ${Row.Address},  DOB: ${Row.DOB},
+                            LicenseNumber: ${Row.LicenseNumber}, Expiry Date: ${Row.ExpiryDate}`;
         outputElement.appendChild(line); 
 
     }
