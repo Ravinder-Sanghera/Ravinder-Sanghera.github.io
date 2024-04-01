@@ -39,7 +39,7 @@ async function Search(){
             console.log("error", error2);
             return;
         }
-        if (!data2 || data2.length === 0){
+        if (!data2 || data2.length == 0){
             const notFound = document.createElement("li");
             notFound.textContent = "Owner Unknown.";
             output.appendChild(notFound);
