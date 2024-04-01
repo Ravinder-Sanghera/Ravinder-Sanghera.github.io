@@ -16,7 +16,7 @@ async function Search(){
     const output = document.getElementById("output");
     output.innerHTML = "";
 
-    if (!data || data.length === 0){
+    if (!data || data.length == 0){
         const notFound = document.createElement("li");
         notFound.textContent = "Vehicle not found.";
         output.appendChild(notFound);

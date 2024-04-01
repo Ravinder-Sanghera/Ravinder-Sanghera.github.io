@@ -9,6 +9,7 @@
 }
 .owner-group{
     margin-right: 30px;
+    margin-bottom: 10px;
 }
   
 .labels{
@@ -42,5 +43,9 @@
 .Checkbox:checked + .labels::before{
     left: 50%;
 }
+
+/* .OwnerDetails{
+    visibility: hidden;
+} */
 
 
