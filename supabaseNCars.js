@@ -22,4 +22,4 @@ checkbox.addEventListener('click', function (){
 
 
 
-document.getElementById("submitButton").addEventListener("click", Submit);
+// document.getElementById("submitButton").addEventListener("click", Submit);
