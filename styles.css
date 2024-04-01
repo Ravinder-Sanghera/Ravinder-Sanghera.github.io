@@ -1,0 +1,45 @@
+.form{
+    display: flex;
+}
+
+.car-group{
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+}
+.owner-group{
+    margin-right: 30px;
+}
+  
+.labels{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: #f0f0f0;
+    font-weight: bold;
+    color: #343434;
+    cursor: pointer;
+}
+
+.labels::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: rgb(229, 229, 229);
+}
+
+.Checkbox{
+    display: none;
+}
+
+.Checkbox:checked + .labels::before{
+    left: 50%;
+}
+
+.labels div{
+    padding: 5px;
+    text-align: center;
+    z-index: 1; 
+}
+

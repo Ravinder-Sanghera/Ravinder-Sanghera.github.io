@@ -5,6 +5,7 @@
     <meta name="author" content="Ravinder Sanghera" />
     <meta name="description" content="Coursework 2 website - new cars" />
     <script src="supabaseNCars.js" type="module"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -14,16 +15,28 @@
 
     <main>
         <h2>New Vehicle:</h2>
-        <br>
-        <form>
-            <p>Enter Registration Plate Number:</p>
-            <input type="text" id = "RegInput">
-            <p>Enter Vehicle Make:</p>
-            <input type="text" id = "MakeInput">
-            <p>Enter Vehicle Model:</p>
-            <input type="text" id = "ModelInput">
-            <p>Enter Vehicle Colour:</p>
-            <input type="text" id = "ColInput">
+
+        <form class="form">
+            <div class="owner-group">
+                <input type="checkbox" id="toggle" class="Checkbox" />
+                <label for="toggle" class="labels">
+                    <div>Existing Owner</div>   
+                    <div>New Owner</div>
+                </label>
+
+                <p>hello</p>
+            </div>
+            
+            <div class="car-group">
+                <p>Enter Registration Plate Number:</p>
+                <input type="text" id="RegInput">
+                <p>Enter Vehicle Make:</p>
+                <input type="text" id="MakeInput">
+                <p>Enter Vehicle Model:</p>
+                <input type="text" id="ModelInput">
+                <p>Enter Vehicle Colour:</p>
+                <input type="text" id="ColInput">
+            </div>
 
 
             <button type="button" id="submitButton">
