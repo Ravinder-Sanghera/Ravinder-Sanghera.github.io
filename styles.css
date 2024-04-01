@@ -21,6 +21,12 @@
     cursor: pointer;
 }
 
+.labels div{
+    padding: 5px;
+    text-align: center;
+    z-index: 1; 
+}
+
 .labels::before{
     content: '';
     position: absolute;
@@ -37,9 +43,4 @@
     left: 50%;
 }
 
-.labels div{
-    padding: 5px;
-    text-align: center;
-    z-index: 1; 
-}
 
