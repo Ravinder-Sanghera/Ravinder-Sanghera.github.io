@@ -2,6 +2,16 @@
     display: flex;
 }
 
+.sidebar{
+    height: 100%; 
+    width: 120px; 
+    position: fixed; 
+    right: 0;
+    top: 0; 
+    z-index: 1;
+    background-color: #343434; 
+}
+
 .car-group{
     display: flex;
     flex-direction: column;
@@ -46,6 +56,10 @@
 
 .OwnerDetails{
     display: none;
+}
+
+.error{
+    color: red;
 }
 
 
