@@ -20,6 +20,15 @@ header {
     background-color: #343434; 
 }
 
+.footer{
+    height: 80px; 
+    width: 100%; 
+    position: fixed; 
+    bottom: 0;
+    z-index: 1;
+    background-color: #343434; 
+}
+
 .car-group{
     display: flex;
     flex-direction: column;
