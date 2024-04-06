@@ -30,7 +30,6 @@ nav ul {
     left: 0; /*sidebar is positioned on the left of the screen*/
     background-color: #343434; /*set sidebar colour*/
     flex: 1;
-    gap: 10px;
 }
 
 .footer{
@@ -42,10 +41,15 @@ nav ul {
     background-color: #343434; /*set footer colour*/
 }
 
-.content{
+main{
     display: grid;
     padding-left: 20%;/*move the content over to clear the sidebar*/
     padding-top: 5%;
+    z-index: 1;
+}
+
+.content{
+    font-size: 125%;
 }
 
 .car-group{
