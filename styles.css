@@ -12,29 +12,40 @@ nav ul {
     list-style-type: none; /* Remove bullet points for navigation links */
   }
 
-header {
-    padding-left: 20%; /*move the header over to clear the sidebar*/
-}
-
-.content{
-    padding-left: 20%;/*move the content over to clear the sidebar*/
+.Header {
+    height: 10%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #343434; /*set header colour*/
+    position: fixed;
+    text-align: center;
+    color: white;
 }
 
 .sidebar{
-    height: 100%; /*sidebar takes the full height of the screen*/
+    height: 78%; /*sidebar takes the full height of the screen*/
     width: 20%; /*set sidebar width*/
     position: fixed; 
     left: 0; /*sidebar is positioned on the left of the screen*/
-    top: 0; /*sidebar is positioned on the top of the screen*/
     background-color: #343434; /*set sidebar colour*/
+    flex: 1;
+    gap: 10px;
 }
 
 .footer{
-    height: 80px; /*sets footer height*/
+    height: 10%; /*sets footer height*/
     width: 100%; /*footer takes the full width of the screen*/
     position: fixed; 
     bottom: 0; /*footer is positioned at the bottom of the screen*/
+    left: 0;
     background-color: #343434; /*set footer colour*/
+}
+
+.content{
+    display: grid;
+    padding-left: 20%;/*move the content over to clear the sidebar*/
+    padding-top: 5%;
 }
 
 .car-group{
@@ -42,6 +53,7 @@ header {
     flex-direction: column;
     margin-right: 60px;
 }
+
 .owner-group{
     margin-right: 30px;
 }
