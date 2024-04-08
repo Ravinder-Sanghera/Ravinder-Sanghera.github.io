@@ -3,18 +3,12 @@
 }
 
 .images{
-    max-width: 90px;
-    height: auto;
+    max-width: 90px; /*sets the size of the images used*/
+    max-height: 90px;
 }
 
 .image-label {
     display: block;
-}
-
-.links{
-    display: flex; /*list elements appear on the same line*/
-    justify-content: space-around; /*list elements are spread out to use the whole page width*/
-    font-size: 18px;
 }
 
 nav ul {
@@ -22,15 +16,22 @@ nav ul {
   }
 
 .Header {
-    height: 10%;
-    width: 100%;
+    height: 25%; /*sets header height to 25% of the window height*/
+    width: 100%; /*header takes the full width of the screen*/
     left: 0;
     top: 0;
-    background-color: #343434; /*set header colour*/
+    background-color: #636262; /*set header colour*/
     position: fixed;
-    text-align: center;
-    color: white;
-    z-index: 1;
+    text-align: center; /*centers the title text*/
+    color: black; /*sets the colour for text inside the header*/
+    z-index: 1; /**/
+}
+
+.links{
+    display: flex; /*list elements appear on the same line*/
+    justify-content: space-evenly; /*list elements are spread out to use the whole page width*/
+    color: black;
+    text-decoration: none;
 }
 
 .sidebar{
@@ -39,31 +40,27 @@ nav ul {
     position: fixed; 
     left: 0; /*sidebar is positioned on the left of the screen*/
     top: 0;
-    background-color: #636262; /*set sidebar colour*/
+    background-color: #343434; /*set sidebar colour*/
     z-index: 0;
-    padding-top: 7%;
+    padding-top: 15%;
     justify-content: center;
+    display: flex;
 }
 
-.sidebar-links{
-    color: black;
-    text-decoration: none;
-    text-align: center;
-}
 
 .footer{
-    height: 10%; /*sets footer height*/
+    height: 7%; /*sets footer height*/
     width: 100%; /*footer takes the full width of the screen*/
     position: fixed; 
     bottom: 0; /*footer is positioned at the bottom of the screen*/
     left: 0;
-    background-color: #343434; /*set footer colour*/
+    background-color: #636262; /*set footer colour*/
 }
 
 main{
     display: grid;
     padding-left: 20%;/*move the content over to clear the sidebar*/
-    padding-top: 5%;
+    padding-top: 11%;
     z-index: 1;
 }
 
@@ -89,7 +86,8 @@ main{
     font-weight: bold; /*label text becomes bold*/
     color: #343434;
     cursor: pointer; /*the cursor changes to pointer when hovering over the label*/
-    margin-bottom: 24px; /*gives the label a margin to push the input boxes down*/
+    /* margin-bottom: 200px;  */
+    /*gives the label a margin to push the input boxes down*/
 }
 
 .labels div{
