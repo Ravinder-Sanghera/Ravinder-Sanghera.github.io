@@ -5,6 +5,9 @@
 .images-header{
     max-width: 40%; /*sets the size of the images used*/
     max-height: 40%;
+    margin-bottom: 0; /* Remove any bottom margin */
+    position: relative;
+    top: -20px; /* Adjust as needed to move images up */
 }
 
 .images-sidebar{
@@ -13,11 +16,14 @@
 }
 
 .image-label {
-    display: block;
+    display: block; /*place the label below the image*/
+    margin-bottom: 0; /* Remove any bottom margin */
+    position: relative;
+    top: -20px; /* Adjust as needed to move images up */
 }
 
 nav ul {
-    list-style-type: none; /* Remove bullet points for navigation links */
+    list-style-type: none; /*Remove bullet points for navigation links*/
   }
 
 .Header {
@@ -37,6 +43,7 @@ nav ul {
     justify-content: space-evenly; /*list elements are spread out to use the whole page width*/
     color: black; /*sets text colour for navigation links*/
     text-decoration: none; /*Removes underlining from links*/
+    padding-bottom: 0%;
 }
 
 .sidebar{
@@ -69,6 +76,14 @@ main{
 }
 
 .content{
+    font-size: 125%;
+    z-index: 3;
+    padding-top: 0%;
+}
+.content p{
+    padding-top: 0%;
+}
+.content1{
     font-size: 125%;
 }
 
