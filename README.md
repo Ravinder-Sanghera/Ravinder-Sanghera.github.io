@@ -1,1 +1,1 @@
-# [Ravinder-Sanghera-Coursework-Link](https://ravinder-sanghera.github.io/SearchPeople.html)
+# [Ravinder-Sanghera-Coursework-Link](https://ravinder-sanghera.github.io/searchpeople.html)
