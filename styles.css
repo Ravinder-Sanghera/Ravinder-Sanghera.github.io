@@ -5,7 +5,7 @@
 .images-header{
     max-width: 40%; /*sets the size of the images used*/
     max-height: 40%;
-    top: -20px; /*move images up*/
+    top: -35px; /*move images up*/
     margin-bottom: 0; /*Remove any bottom margin*/
     position: relative;
 }
@@ -17,7 +17,7 @@
 
 .image-label {
     display: block; /*place the label below the image*/
-    top: -20px; /*move the links up*/
+    top: -35px; /*move the links up*/
     margin-bottom: 0; /*Remove any bottom margin*/
     color: black;
     position: relative;
