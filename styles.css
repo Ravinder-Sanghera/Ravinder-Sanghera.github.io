@@ -65,6 +65,7 @@ nav ul {
     width: 100%; /*footer takes the full width of the screen*/
     position: fixed; 
     bottom: 0; /*footer is positioned at the bottom of the screen*/
+    z-index: 1; /*places footer on top of the sidebar*/
     left: 0;
     background-color: #636262; /*set footer colour*/
 }
