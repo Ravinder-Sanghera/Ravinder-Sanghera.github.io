@@ -2,25 +2,9 @@
     display: flex;
 }
 
-.images-header{
-    max-width: 40%; /*sets the size of the images used*/
-    max-height: 40%;
-    top: -35px; /*move images up*/
-    margin-bottom: 0; /*Remove any bottom margin*/
-    position: relative;
-}
-
 .images-sidebar{
     max-width: 40%; /*sets the size of the images used*/
     max-height: 15%;
-}
-
-.image-label {
-    display: block; /*place the label below the image*/
-    top: -35px; /*move the links up*/
-    margin-bottom: 0; /*Remove any bottom margin*/
-    color: black;
-    position: relative;
 }
 
 nav ul {
@@ -28,7 +12,7 @@ nav ul {
   }
 
 .Header {
-    height: 25%; /*sets header height to 25% of the window height*/
+    height: 20%; /*sets header height to 25% of the window height*/
     width: 100%; /*header takes the full width of the screen*/
     left: 0;
     top: 0;
@@ -45,6 +29,7 @@ nav ul {
     color: black; /*sets text colour for navigation links*/
     text-decoration: none; /*Removes underlining from links*/
     padding-bottom: 0%;
+    font-size: 125%;
 }
 
 .sidebar{
@@ -74,7 +59,7 @@ nav ul {
 main{
     display: grid;
     padding-left: 20%; /*move the content over to clear the sidebar*/
-    padding-top: 11%; /*move the content down to clear the header*/
+    padding-top: 9%; /*move the content down to clear the header*/
 }
 
 .content{
@@ -84,9 +69,6 @@ main{
 }
 .content p{
     padding-top: 0%;
-}
-.content1{
-    font-size: 125%;
 }
 
 .car-group{
