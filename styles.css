@@ -3,8 +3,8 @@
 }
 
 .images-sidebar{
-    max-width: 50%; /*sets the size of the images used*/
-    max-height: 20%;
+    max-width: 40%; /*sets the size of the images used*/
+    max-height: 15%;
 }
 
 nav ul {
@@ -21,6 +21,9 @@ nav ul {
     text-align: center; /*centers the title text*/
     color: black; /*sets the colour for text inside the header*/
     z-index: 1; /*places header on top of the sidebar*/
+}
+
+header{
     padding: 10px;
     margin: 10px;
     border: black;
@@ -37,7 +40,7 @@ nav ul {
 }
 
 .sidebar{
-    height: 65%; /*sidebar takes the full height of the screen*/
+    height: 100%; /*sidebar takes the full height of the screen*/
     width: 20%; /*set sidebar width*/
     position: fixed; 
     left: 0; /*sidebar is positioned on the left of the screen*/
@@ -47,7 +50,6 @@ nav ul {
     padding-top: 15%; /*content in the sidebar is moved down to clear the header*/
     justify-content: center; /*Centres the image horizontally within the sidebar*/
     display: flex; /*Centres the image horizontally within the sidebar*/
-    margin: 10px;
 }
 
 
@@ -59,13 +61,12 @@ nav ul {
     z-index: 1; /*places footer on top of the sidebar*/
     left: 0;
     background-color: #636262; /*set footer colour*/
-    margin: 10px;
 }
 
 main{
     display: grid;
-    padding-left: 22%; /*move the content over to clear the sidebar*/
-    padding-top: 10%; /*move the content down to clear the header*/
+    padding-left: 20%; /*move the content over to clear the sidebar*/
+    padding-top: 9%; /*move the content down to clear the header*/
 }
 
 .content{
