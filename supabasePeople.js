@@ -14,19 +14,19 @@ async function Search(){
         return;
     }
 
-    const output = document.getElementById("output");
-    output.innerHTML = "";
-    let found = 0;
+    const output = document.getElementById("results");
+    output.innerHTML = "<h2>Results:</h2>";
+    let found = false;
 
     for (const Row of data){
-        const line = document.createElement("li");
-        line.textContent = `Name: ${Row.Name},   Address: ${Row.Address},   DOB: ${Row.DOB}, 
+        const div = document.createElement("div"); // Create a div for each row
+        div.textContent = `Name: ${Row.Name},   Address: ${Row.Address},   DOB: ${Row.DOB}, 
         LicenseNumber: ${Row.LicenseNumber},   Expiry Date: ${Row.ExpiryDate}`;
-        output.appendChild(line);
+        output.appendChild(div); // Append the div to the output container
         output.appendChild(document.createElement("br"));
-        found = 1;
+        found = true;
     }
-    if (found==0){
+    if (!found){
         const line = document.createElement("p");
         line.textContent = "Error: Not Found";
         output.appendChild(line);
