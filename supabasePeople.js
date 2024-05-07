@@ -29,6 +29,12 @@ async function Search(){
         const line = document.createElement("p");
         line.textContent = "Error: Not Found";
         output.appendChild(line);
+        const message = document.getElementById("message");
+        message.textContent =  'No result found';
+    }
+    else{
+        const message = document.getElementById("message");
+        message.textContent =  'Search successful';
     }
     
 }
