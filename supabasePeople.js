@@ -2,7 +2,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const supabase = createClient("https://czibkypjyfbtsxpigztg.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6aWJreXBqeWZidHN4cGlnenRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE4MDY1MjYsImV4cCI6MjAyNzM4MjUyNn0.Eizv6pKn1tqGNwJ676SeIqQnKrqNJHy8Uo-Dej6G14s");
 
 async function Search(){
-    const searchQuery = document.getElementById("searchInput").value;
+    const searchQuery = document.getElementById("name").value;
 
     const {data, error} = await supabase
         .from("People")
@@ -16,13 +16,20 @@ async function Search(){
 
     const output = document.getElementById("output");
     output.innerHTML = "";
+    let found = 0;
 
     for (const Row of data){
         const line = document.createElement("li");
         line.textContent = `Name: ${Row.Name},   Address: ${Row.Address},   DOB: ${Row.DOB}, 
-                            LicenseNumber: ${Row.LicenseNumber},   Expiry Date: ${Row.ExpiryDate}`;
+        LicenseNumber: ${Row.LicenseNumber},   Expiry Date: ${Row.ExpiryDate}`;
         output.appendChild(line);
         output.appendChild(document.createElement("br"));
+        found = 1;
+    }
+    if (found==0){
+        const line = document.createElement("p");
+        line.textContent = "Error: Not Found";
+        output.appendChild(line);
     }
     
 }
