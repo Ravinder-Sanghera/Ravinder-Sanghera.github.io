@@ -11,8 +11,10 @@ nav ul {
     list-style-type: none; /*Remove bullet points for navigation links*/
   }
 
-.Header {
-    height: 20%; /*sets header height to 25% of the window height*/
+
+
+header{
+    height: 18%; /*sets header height to 25% of the window height*/
     width: 100%; /*header takes the full width of the screen*/
     left: 0;
     top: 0;
@@ -21,13 +23,10 @@ nav ul {
     text-align: center; /*centers the title text*/
     color: black; /*sets the colour for text inside the header*/
     z-index: 1; /*places header on top of the sidebar*/
-}
 
-header{
     padding: 10px;
     margin: 10px;
-    border: black;
-    border-width: 1px;
+    border: 1px solid black;
 }
 
 .links{
@@ -40,16 +39,20 @@ header{
 }
 
 .sidebar{
-    height: 100%; /*sidebar takes the full height of the screen*/
+    height: 61%; /*sidebar takes the full height of the screen*/
     width: 20%; /*set sidebar width*/
+    top: 22%;
     position: fixed; 
     left: 0; /*sidebar is positioned on the left of the screen*/
-    top: 0;
     background-color: #343434; /*set sidebar colour*/
     z-index: 0; /*places sidebar underneath the header*/
     padding-top: 15%; /*content in the sidebar is moved down to clear the header*/
     justify-content: center; /*Centres the image horizontally within the sidebar*/
     display: flex; /*Centres the image horizontally within the sidebar*/
+
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
 }
 
 
@@ -61,21 +64,27 @@ header{
     z-index: 1; /*places footer on top of the sidebar*/
     left: 0;
     background-color: #636262; /*set footer colour*/
+
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
 }
 
 main{
     display: grid;
-    padding-left: 20%; /*move the content over to clear the sidebar*/
-    padding-top: 9%; /*move the content down to clear the header*/
+    padding: 10px;
+
+
+    margin: 10px;
+    margin-top: 12%;
+    margin-left: calc(20% + 35px);
+    border: 1px solid black;
+    
 }
 
 .content{
     font-size: 125%;
     z-index: 3;
-    padding-top: 0%;
-}
-.content p{
-    padding-top: 0%;
 }
 
 .car-group{
@@ -85,7 +94,7 @@ main{
 }
 
 .owner-group{
-    margin-right: 30px;
+    margin-right: 100px;
 }
   
 .labels{
@@ -104,26 +113,6 @@ main{
     padding: 5px;
     text-align: center;
     z-index: 1; 
-}
-
-.labels::before{
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: rgb(229, 229, 229);
-}
-
-.Checkbox{
-    display: none; /*hides the checkbox*/
-}
-
-.Checkbox:checked + .labels::before{
-    left: 50%;
-}
-
-.OwnerDetails{
-    display: none; /*hides the owner details input boxes by default*/
 }
 
 .error{
