@@ -23,7 +23,6 @@ async function Search(){
         div.textContent = `Name: ${Row.Name},   Address: ${Row.Address},   DOB: ${Row.DOB}, 
         LicenseNumber: ${Row.LicenseNumber},   Expiry Date: ${Row.ExpiryDate}`;
         output.appendChild(div); // Append the div to the output container
-        output.appendChild(document.createElement("br"));
         found = true;
     }
     if (!found){
