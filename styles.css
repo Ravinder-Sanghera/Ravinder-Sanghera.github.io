@@ -11,8 +11,6 @@ nav ul {
     list-style-type: none; /*Remove bullet points for navigation links*/
   }
 
-
-
 header{
     height: 18%; /*sets header height to 25% of the window height*/
     width: 100%; /*header takes the full width of the screen*/
