@@ -4,6 +4,8 @@ const supabase = createClient("https://czibkypjyfbtsxpigztg.supabase.co", "eyJhb
 async function Search(){
     const message = document.getElementById("message");
     message.textContent =  '';
+    const output = document.getElementById("results");
+    output.innerHTML = "<h2>Results:</h2>";
     
     const searchQueryP = document.getElementById("name").value;
     const searchQueryL = document.getElementById("license").value;
@@ -47,9 +49,10 @@ async function Search(){
 
 function print(data){
     let found = false;
-    const output = document.getElementById("results");
     const message = document.getElementById("message");
+    const output = document.getElementById("results");
     output.innerHTML = "<h2>Results:</h2>";
+
     for (const Row of data){
         const div = document.createElement("div"); // Create a div for each row
         div.textContent = `Name: ${Row.Name},   Address: ${Row.Address},   DOB: ${Row.DOB}, 
