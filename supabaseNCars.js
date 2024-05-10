@@ -3,31 +3,47 @@ const supabase = createClient("https://czibkypjyfbtsxpigztg.supabase.co", "eyJhb
 
 const OwnerDetails = document.querySelector(".owner-group");
 const OwnerDetailsB = document.querySelector(".owner-group-button");
+const output = document.getElementById("message");
 
 function hideOwnerDetails(){
     OwnerDetails.style.display = "none";
     OwnerDetailsB.style.display = "none";
+    output.textContent =  'Vehicle added successfully';
 }
 function showOwnerDetails(){
     OwnerDetails.style.display = "block";
     OwnerDetailsB.style.display = "block";
 }
 
-async function newOwner(name){
-    const address = document.getElementById("Address").value;
-    const DOB = document.getElementById("DOB").value;
-    const license = document.getElementById("License").value;
-    const expiry = document.getElementById("Expiry").value;
+async function Submit2(){
+    output.innerHTML = "";
+    const reg = document.getElementById("rego").value;
+    const make = document.getElementById("make").value;
+    const model = document.getElementById("model").value;
+    const colour = document.getElementById("colour").value;
 
-    const {data, error} = await supabase
-        .from("People")
-        .insert({Name: name, Address: address, DOB: DOB, LicenseNumber: license, ExpiryDate: expiry})
-        .select();
-    if (error){
-        return -1;
-    }else{
-        return data[0].PersonID;
+    const name = document.getElementById("name").value;
+    const id = document.getElementById("personid").value;
+    const address = document.getElementById("address").value;
+    const DOB = document.getElementById("dob").value;
+    const license = document.getElementById("license").value;
+    const expiry = document.getElementById("expire").value;
+
+    if (name != "" && reg != "" && make != "" && model != "" && colour != "" && id != "" && address != "" && DOB != "" && license != "" && expiry != ""){
+        const {error} = await supabase
+            .from("Vehicles")
+            .insert({VehicleID: reg, Make: make, Model: model, Colour: colour, OwnerID: id});
+            
+            const {error2} = await supabase
+            .from("People")
+            .insert({PersonID: id, Name: name, Address: address, DOB: DOB, LicenseNumber: license, ExpiryDate: expiry})
+            
+            hideOwnerDetails()
+
     }
+    
+
+    
 }
 
 async function existingOwner(name){
@@ -46,7 +62,6 @@ async function existingOwner(name){
 }
 
 async function Submit(){
-    const output = document.getElementById("message");
     output.innerHTML = "";
     const name = document.getElementById("owner").value;
     const reg = document.getElementById("rego").value;
@@ -66,9 +81,9 @@ async function Submit(){
         const {error} = await supabase
             .from("Vehicles")
             .insert({VehicleID: reg, Make: make, Model: model, Colour: colour, OwnerID: ownerID});
+        hideOwnerDetails()
     }else{
         output.textContent =  'Error';
-
     }
     
 }

@@ -68,7 +68,7 @@ header{
     border: 1px solid black;
 }
 
-main{
+.container{
     display: grid;
     padding: 10px;
 
