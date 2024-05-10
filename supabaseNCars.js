@@ -1,23 +1,17 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 const supabase = createClient("https://czibkypjyfbtsxpigztg.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6aWJreXBqeWZidHN4cGlnenRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE4MDY1MjYsImV4cCI6MjAyNzM4MjUyNn0.Eizv6pKn1tqGNwJ676SeIqQnKrqNJHy8Uo-Dej6G14s");
 
-const OwnerDetails = document.querySelector(".OwnerDetails");
+const OwnerDetails = document.querySelector(".owner-group");
+const OwnerDetailsB = document.querySelector(".owner-group-button");
 
 function hideOwnerDetails(){
     OwnerDetails.style.display = "none";
+    OwnerDetailsB.style.display = "none";
 }
 function showOwnerDetails(){
     OwnerDetails.style.display = "block";
+    OwnerDetailsB.style.display = "block";
 }
-
-const checkbox = document.getElementById('toggle');
-checkbox.addEventListener('click', function (){
-    if (checkbox.checked){
-        showOwnerDetails();
-    } else{
-        hideOwnerDetails();
-    }
-});
 
 async function newOwner(name){
     const address = document.getElementById("Address").value;
@@ -51,35 +45,31 @@ async function existingOwner(name){
     }
 }
 
-function notFound(output){
-    const line = document.createElement("p");
-    line.textContent = "Error: Name not Found";
-    output.appendChild(line);
-}
-
 async function Submit(){
-    const output = document.getElementById("error");
+    const output = document.getElementById("message");
     output.innerHTML = "";
-    const name = document.getElementById("Name").value;
-    const reg = document.getElementById("RegInput").value;
-    const make = document.getElementById("MakeInput").value;
-    const model = document.getElementById("ModelInput").value;
-    const colour = document.getElementById("ColInput").value;
+    const name = document.getElementById("name").value;
+    const reg = document.getElementById("rego").value;
+    const make = document.getElementById("make").value;
+    const model = document.getElementById("model").value;
+    const colour = document.getElementById("colour").value;
     let ownerID;
-    if (checkbox.checked){
-        ownerID = await newOwner(name);
+    
+    ownerID = await existingOwner(name);
+    if (ownerID == -1){
+        showOwnerDetails();
+    }else if (name != "" && reg != "" && make != "" && model != "" && colour != ""){
+        const {error} = await supabase
+            .from("Vehicles")
+            .insert({VehicleID: reg, Make: make, Model: model, Colour: colour, OwnerID: ownerID});
     }else{
-        ownerID = await existingOwner(name);
-        if (ownerID == -1){
-            notFound(output);
-            return;
-        }
+        output.textContent =  'Error';
+
     }
-    const {error} = await supabase
-        .from("Vehicles")
-        .insert({VehicleID: reg, Make: make, Model: model, Colour: colour, OwnerID: ownerID});
+    
 }
 
 
 
 document.getElementById("submitButton").addEventListener("click", Submit);
+document.getElementById("submitButton2").addEventListener("click", Submit2);

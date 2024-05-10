@@ -47,39 +47,46 @@
     <main>
         <div class="content">
             <h2>New Vehicle:</h2>
-            <div class="error" id="error"></div>
+            <div class="error" id="message"></div>
 
             <form class="form">
                 <div>
-                    <p>Enter Full Name:</p>
-                    <input type="text" id="Name">
+                    
 
-                    <div class="OwnerDetails">
-                        <p>Enter Address:</p>
-                        <input type="text" id="Address">
-                        <p>Enter DOB:</p>
-                        <input type="text" id="DOB">
-                        <p>Enter License Number:</p>
-                        <input type="text" id="License">
-                        <p>Enter License Expiry Date:</p>
-                        <input type="text" id="Expiry">
+                    <div class="car-group">
+                        <p>Enter Full Name:</p>
+                        <input type="text" id="owner">
+                        <p>Enter Registration Plate Number:</p>
+                        <input type="text" id="rego">
+                        <p>Enter Vehicle Make:</p>
+                        <input type="text" id="make">
+                        <p>Enter Vehicle Model:</p>
+                        <input type="text" id="model">
+                        <p>Enter Vehicle Colour:</p>
+                        <input type="text" id="colour">
                     </div>
                 </div>
                 
-                <div class="car-group">
-                    <br>
-                    <br>
-                    <p>Enter Registration Plate Number:</p>
-                    <input type="text" id="RegInput">
-                    <p>Enter Vehicle Make:</p>
-                    <input type="text" id="MakeInput">
-                    <p>Enter Vehicle Model:</p>
-                    <input type="text" id="ModelInput">
-                    <p>Enter Vehicle Colour:</p>
-                    <input type="text" id="ColInput">
+                <button type="button" id="submitButton">Add <br>
+                    <img src="images/submit-icon.png" alt="Search Icon" style="height: 12px;">
+                </button>
+                
+                <div class="owner-group">
+                    <p>Enter Person ID:</p>
+                    <input type="text" id="personid">
+                    <p>Enter Full Name:</p>
+                    <input type="text" id="name">
+                    <p>Enter Address:</p>
+                    <input type="text" id="address">
+                    <p>Enter DOB:</p>
+                    <input type="text" id="dob">
+                    <p>Enter License Number:</p>
+                    <input type="text" id="license">
+                    <p>Enter License Expiry Date:</p>
+                    <input type="text" id="expire">
                 </div>
 
-                <button type="button" id="submitButton">
+                <button type="button" id="submitButton2" class = "owner-group-button">Add owner <br>
                     <img src="images/submit-icon.png" alt="Search Icon" style="height: 12px;">
                 </button>
             </form>
