@@ -48,12 +48,12 @@ async function existingOwner(name){
 async function Submit(){
     const output = document.getElementById("message");
     output.innerHTML = "";
-    const name = document.getElementById("name").value;
+    const name = document.getElementById("owner").value;
     const reg = document.getElementById("rego").value;
     const make = document.getElementById("make").value;
     const model = document.getElementById("model").value;
     const colour = document.getElementById("colour").value;
-    let ownerID;
+    let ownerID = -1;
     
     ownerID = await existingOwner(name);
     if (ownerID == -1){
