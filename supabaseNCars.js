@@ -39,7 +39,8 @@ async function Submit2(){
             .insert({PersonID: id, Name: name, Address: address, DOB: DOB, LicenseNumber: license, ExpiryDate: expiry})
             
             hideOwnerDetails()
-
+    }else{
+        output.textContent =  'Error';
     }
     
 
@@ -90,5 +91,5 @@ async function Submit(){
 
 
 
-document.getElementById("submitButton").addEventListener("click", Submit);
+document.getElementById("Add").addEventListener("click", Submit);
 document.getElementById("submitButton2").addEventListener("click", Submit2);

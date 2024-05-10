@@ -72,7 +72,6 @@ header{
     display: grid;
     padding: 10px;
 
-
     margin: 10px;
     margin-top: 12%;
     margin-left: calc(20% + 35px);
@@ -98,24 +97,6 @@ header{
 }
 .owner-group-button{
     display: none;
-}
-  
-.labels{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background: #f0f0f0;
-    font-weight: bold; /*label text becomes bold*/
-    color: #343434;
-    cursor: pointer; /*the cursor changes to pointer when hovering over the label*/
-    /* margin-bottom: 200px;  */
-    /*gives the label a margin to push the input boxes down*/
-}
-
-.labels div{
-    padding: 5px;
-    text-align: center;
-    z-index: 1; 
 }
 
 .error{
