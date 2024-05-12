@@ -30,7 +30,8 @@ async function Search(){
     const car = data[0];
     
     const div = document.createElement("div"); // Create a div
-    div.textContent = `${car.Make}`;
+    div.textContent = `VehicleID: ${car.VehicleID},  Make: ${car.Make},  Model: ${car.Model},
+    Colour: ${car.Colour}`;
     output.appendChild(div); // Append the div to the output container
     
     message.textContent =  'Search successful';

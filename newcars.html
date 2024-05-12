@@ -8,6 +8,7 @@
     <meta name="title" content="Coursework 2 website - new cars" />
     <script src="supabaseNCars.js" type="module"></script>
     <link rel="stylesheet" href="styles.css">
+    <title>Coursework 2 website - new cars</title>
 </head>
 
 <body>
@@ -44,7 +45,7 @@
         </div>
     </aside>
 
-    <main class="container">
+    <main id="container">
         <div class="content">
             <div class="error" id="message"></div>
 
@@ -54,33 +55,33 @@
 
                     <div class="car-group">
                         <p>Enter Full Name:</p>
-                        <input type="text" id="owner">
+                        <input type="text" placeholder="Name..." id="owner">
                         <p>Enter Registration Plate Number:</p>
-                        <input type="text" id="rego">
+                        <input type="text" placeholder="Registration Plate..." id="rego">
                         <p>Enter Vehicle Make:</p>
-                        <input type="text" id="make">
+                        <input type="text" placeholder="Vehicle Make..." id="make">
                         <p>Enter Vehicle Model:</p>
-                        <input type="text" id="model">
+                        <input type="text" placeholder="Vehicle Model..." id="model">
                         <p>Enter Vehicle Colour:</p>
-                        <input type="text" id="colour">
+                        <input type="text" placeholder="Vehicle Colour..." id="colour">
                     </div>
                 </div>
                 
-                <button type="button" id="Add">Add</button>
+                <button type="button" id="Add">Add vehicle</button>
                 
                 <div class="owner-group">
                     <p>Enter Person ID:</p>
-                    <input type="text" id="personid">
+                    <input type="text" placeholder="Person ID..." id="personid">
                     <p>Enter Full Name:</p>
-                    <input type="text" id="name">
+                    <input type="text" placeholder="Name..." id="name">
                     <p>Enter Address:</p>
-                    <input type="text" id="address">
+                    <input type="text" placeholder="Address..." id="address">
                     <p>Enter DOB:</p>
-                    <input type="text" id="dob">
+                    <input type="text" placeholder="DOB..." id="dob">
                     <p>Enter License Number:</p>
-                    <input type="text" id="license">
+                    <input type="text" placeholder="License Number..." id="license">
                     <p>Enter License Expiry Date:</p>
-                    <input type="text" id="expire">
+                    <input type="text" placeholder="License Expiry..." id="expire">
                 </div>
 
                 <button type="button" id="submitButton2" class = "owner-group-button">Add owner <br>

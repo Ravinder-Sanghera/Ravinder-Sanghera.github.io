@@ -13,7 +13,7 @@ nav ul {
 
 header{
     height: 18%; /*sets header height to 25% of the window height*/
-    width: 100%; /*header takes the full width of the screen*/
+    width: 97.5vw; /*header takes the full width of the screen*/
     left: 0;
     top: 0;
     background-color: #636262; /*set header colour*/
@@ -37,7 +37,7 @@ header{
 }
 
 .sidebar{
-    height: 65.5%; /*sidebar takes the full height of the screen*/
+    height: 65.5%; /*sidebar takes the correct height of the screen to stay between header and footer*/
     width: 20%; /*set sidebar width*/
     top: 22%;
     position: fixed; 
@@ -56,10 +56,9 @@ header{
 
 .footer{
     height: 3%; /*sets footer height*/
-    width: 100%; /*footer takes the full width of the screen*/
+    width: 97.5vw; /*footer takes the full width of the screen*/
     position: fixed; 
     bottom: 0; /*footer is positioned at the bottom of the screen*/
-    z-index: 1; /*places footer on top of the sidebar*/
     left: 0;
     background-color: #636262; /*set footer colour*/
 
@@ -68,12 +67,12 @@ header{
     border: 1px solid black;
 }
 
-.container{
+main{
     display: grid;
     padding: 10px;
 
     margin: 10px;
-    margin-top: 12%;
+    margin-top: 23.5vh;
     margin-left: calc(20% + 35px);
     border: 1px solid black;
     
@@ -101,6 +100,52 @@ header{
 
 .error{
     color: red; /*sets error message text to red*/
+}
+
+@media (max-width: 500px){
+    .links{
+        display: block;
+    }
+
+    header{
+        width: 92vw;
+        font-size: 90%;
+    }
+
+    main{
+        margin-left: 2px;
+    }
+
+    .content{
+        font-size: 90%;
+    }
+
+    .sidebar{
+        height: 5%;
+        bottom: 0;
+        top: auto;
+    }
+
+    .footer{
+        width: 65vw;
+        height: 5%;
+        left: auto;
+        right: 0;
+    }
+
+    .images-sidebar{
+        max-width: 120%; /*sets the size of the images used*/
+        max-height: 120%;
+    }
+
+    .car-group{
+        margin-right: 5px;
+    }
+
+    .owner-group{
+        padding-left: 0px;
+        padding-right: 5px;
+    }
 }
 
 
