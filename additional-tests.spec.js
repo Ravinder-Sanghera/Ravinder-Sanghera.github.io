@@ -13,9 +13,7 @@ const launchOptions = {
    launchOptions,
  });
 
-
-const websiteURL = 'https://ravinder-sanghera.github.io/searchpeople.html';
-// const websiteURL = 'http://127.0.0.1:5500/searchpeople.html';
+const websiteURL = 'http://127.0.0.1:5500/searchpeople.html';
 
 test.beforeEach(async ({ page }) => {
    await page.goto(websiteURL);
