@@ -70,11 +70,8 @@ async function Submit(){
     const model = document.getElementById("model").value;
     const colour = document.getElementById("colour").value;
     let ownerID = -1;
-
-    console.log(name + reg + make + model + colour + ownerID);
     
     ownerID = await existingOwner(name);
-    console.log(ownerID);
 
     if (ownerID == -1){
         showOwnerDetails();

@@ -15,7 +15,7 @@ header{
     height: 18%; /*sets header height to 25% of the window height*/
     width: 97.5vw; /*header takes the full width of the screen*/
     left: 0;
-    top: 0;
+    top: 0; /*places header at the top of the page*/
     background-color: #636262; /*set header colour*/
     position: fixed;
     text-align: center; /*centers the title text*/
@@ -24,7 +24,7 @@ header{
 
     padding: 10px;
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid black; /*add a 1 pixel black border*/
 }
 
 .links{
@@ -33,7 +33,7 @@ header{
     color: white; /*sets text colour for navigation links*/
     text-decoration: none; /*Removes underlining from links*/
     padding-bottom: 0%;
-    font-size: 125%;
+    font-size: 125%; /*increase the font size*/
 }
 
 .sidebar{
@@ -50,7 +50,7 @@ header{
 
     padding: 10px;
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid black; /*add a 1 pixel black border*/
 }
 
 
@@ -64,7 +64,7 @@ header{
 
     padding: 10px;
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid black; /*add a 1 pixel black border*/
 }
 
 main{
@@ -74,7 +74,7 @@ main{
     margin: 10px;
     margin-top: 23.5vh;
     margin-left: calc(20% + 35px);
-    border: 1px solid black;
+    border: 1px solid black; /*add a 1 pixel black border*/
     
 }
 
@@ -102,7 +102,7 @@ main{
     color: red; /*sets error message text to red*/
 }
 
-@media (max-width: 500px){
+@media (max-width: 500px){  /*changes the formatting when the screen is less than 500 pixels wide*/
     .links{
         display: block;
     }
